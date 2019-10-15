@@ -41,16 +41,21 @@
           class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
         <!-- 数据源 -->
         <property name="dataSource" ref="dataSource"></property>
-        <property name="configLocation"
-                  value="classpath:mybatis-config.xml"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!-- 别名处理 -->
-        <property name="typeAliasesPackage"
-                  value="com.mp.beans"></property>
-
+        <property name="typeAliasesPackage" value="com.mp.beans"></property>
         <!-- 注入配置-->
         <!--<property name="configuration" ref="configuration"></property>-->
         <!-- 注入全局配置策略-->
         <property name="globalConfig" ref="globalConfiguration"></property>
+
+        <property name="plugins">
+            <!-- 分页查询插件 -->
+            <bean id="paginationInterceptor" class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
+                <property name="dialectType" value="mysql" />
+            </bean>
+        </property>
+
     </bean>
 
     <!--这个等于Mybatis的全局配置文件，如果在MybatisSqlSessionFactoryBean里面已经配置了configLocation属性（外部加载Mybatis全局配置文件），就不能再配置configuration属性-->
@@ -81,4 +86,5 @@
         <property name="basePackage"
                   value="com.mp.mapper"></property>
     </bean>
+
 </beans>

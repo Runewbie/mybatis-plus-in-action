@@ -2,30 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mybatis-plus-in-action</artifactId>
+        <groupId>com.demo.mybatis-plus</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.demo.mybatis-plus</groupId>
-    <artifactId>mybatis-plus-in-action</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>mp01</module>
-        <module>mp02</module>
-        <module>mp03</module>
-        <module>mp04</module>
-    </modules>
+    <artifactId>mp04</artifactId>
 
-    <!-- 统一管理项目依赖版本 -->
-    <properties>
-        <mybatis.plus.version>3.2.0</mybatis.plus.version>
-        <!--<mybatis.plus.version>2.3</mybatis.plus.version>-->
-        <junit.version>4.12</junit.version>
-        <log4j.version>1.2.17</log4j.version>
-        <druid.version>1.1.20</druid.version>
-        <mysql.version>5.1.48</mysql.version>
-        <spring.version>5.2.0.RELEASE</spring.version>
-        <lombok.version>1.18.10</lombok.version>
-    </properties>
 
     <dependencies>
         <!-- mp 依赖
@@ -80,20 +65,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <!-- 设置JDK编译版本 -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

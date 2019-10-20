@@ -24,4 +24,4 @@ hs_err_pid*
 /.idea/
 *.iml
 /mybatis-plus-in-action.iml
-/target/
+/*/target/

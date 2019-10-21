@@ -16,6 +16,7 @@
         <module>mp05</module>
         <module>mp06</module>
         <module>mp07</module>
+        <module>mp08</module>
     </modules>
 
     <!-- 统一管理项目依赖版本 -->

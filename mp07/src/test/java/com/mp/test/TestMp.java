@@ -30,43 +30,4 @@ public class TestMp {
     EmployeeMapper employeeMapper = ioc.getBean("employeeMapper", EmployeeMapper.class);
 
 
-
-
-    /**
-     * 测试 乐观锁
-     */
-    @Test
-    public void testOptimisticLocker() {
-
-        Employee employee = new Employee();
-        employee.setId(10);
-        employee.setLastName("MP");
-        employee.setAge(25);
-        employee.setEmail("mp@qq.com");
-        employee.setGender("0");
-        employee.setVersion(2);
-
-        employeeMapper.updateById(employee);
-
-    }
-
-    /**
-     * 测试 SQL 执行分析插件
-     */
-    @Test
-    public void testSqlExplain() {
-
-        // 全表删除
-        employeeMapper.delete(null);
-    }
-
-    /**
-     * 测试分页插件
-     */
-    @Test
-    public void testPage() {
-        IPage<Employee> employeeIPage = employeeMapper.selectPage(new Page<>(2, 1), null);
-        System.out.println("employeeIPage：" + employeeIPage.getRecords());
-    }
-
 }

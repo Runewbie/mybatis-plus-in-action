@@ -8,6 +8,8 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 /**
  * @author: li_jian
  * @version: 1.0
@@ -34,4 +36,9 @@ public class Employee extends Model<Employee> {
     // 当前字段是否在数据库中存在，如果不存在则忽略该字段插入到数据库中
     @TableField(exist = false)
     private Double salary;
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
 }

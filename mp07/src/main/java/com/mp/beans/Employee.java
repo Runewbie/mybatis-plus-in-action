@@ -1,10 +1,8 @@
 package com.mp.beans;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.Version;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**
@@ -33,6 +31,12 @@ public class Employee extends Model<Employee> {
 
     @Version
     private Integer version;
+
+    /**
+     * 逻辑删除字段 同时在对应的表中添加逻辑删除字段 is_delete
+     */
+    @TableLogic
+    private Integer isDelete;
 
     public Integer getVersion() {
         return version;
@@ -85,6 +89,14 @@ public class Employee extends Model<Employee> {
     @Override
     protected Serializable pkVal() {
         return this.id;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 
     @Override

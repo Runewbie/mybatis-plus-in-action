@@ -59,12 +59,12 @@
                 </bean>
 
                 <!-- 执行分析插件 只建议在开发环境中使用，不建议在生产环境使用 -->
-                <bean class="com.baomidou.mybatisplus.extension.plugins.SqlExplainInterceptor">
-                    <property name="sqlParserList">
-                            <!-- 禁止全表删除-->
-                        <bean class="com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser"></bean>
-                    </property>
-                </bean>
+<!--                <bean class="com.baomidou.mybatisplus.extension.plugins.SqlExplainInterceptor">-->
+<!--                    <property name="sqlParserList">-->
+<!--                            &lt;!&ndash; 禁止全表删除&ndash;&gt;-->
+<!--                        <bean class="com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser"></bean>-->
+<!--                    </property>-->
+<!--                </bean>-->
 
                 <!-- 乐观锁插件,做这个测试的时候，需要给实体类接一个version字段，相应的也需要在数据库中添加该字段 -->
                 <bean class="com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor"></bean>
@@ -85,6 +85,7 @@
     <bean id="globalConfiguration" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
         <!-- 全局主键策略-->
         <property name="dbConfig" ref="dbConfig"></property>
+        <property name="sqlInjector" ref="mysqlInjector"></property>
     </bean>
     <!-- 这里-->
     <bean id="dbConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig$DbConfig">
@@ -92,7 +93,14 @@
         <property name="idType" value="AUTO"></property>
         <!-- 全局的表前缀策略配置 -->
         <property name="tablePrefix" value="tbl_"></property>
+
+        <!-- 配置逻辑删除全局值-->
+        <property name="logicDeleteValue" value="-1"></property>
+        <property name="logicNotDeleteValue" value="1"></property>
     </bean>
+
+    <!-- 注入自定义注入器 -->
+    <bean name="mysqlInjector" class="com.mp.injector.MySqlInjector"></bean>
 
     <!--
     配置 mybatis 扫描 mapper 接口的路径

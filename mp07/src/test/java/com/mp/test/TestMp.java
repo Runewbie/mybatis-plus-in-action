@@ -2,6 +2,7 @@ package com.mp.test;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -16,6 +17,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Arrays;
+
 
 /**
  * @author: li_jian
@@ -29,5 +32,29 @@ public class TestMp {
 
     EmployeeMapper employeeMapper = ioc.getBean("employeeMapper", EmployeeMapper.class);
 
+    /**
+     * 测试逻辑删除
+     */
+    @Test
+    public void testLogicDeleteById() {
+        employeeMapper.deleteById(1);
+    }
+    @Test
+    public void testLogicDeleteBatchIds() {
+        employeeMapper.deleteBatchIds(Arrays.asList(15, 16, 17));
+    }
+    @Test
+    public void testLogicDelete() {
+        employeeMapper.delete(new QueryWrapper<Employee>().eq("age", 25));
+    }
 
+    /**
+     * 测试自定义全局操作
+     */
+    @Test
+    public void testInjector(){
+        int ret = employeeMapper.deleteAll();
+        System.out.println(ret);
+
+    }
 }

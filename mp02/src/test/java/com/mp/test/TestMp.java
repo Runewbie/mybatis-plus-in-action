@@ -35,16 +35,16 @@ public class TestMp {
      */
     @Test
     public void testCommonDelete() {
-//        // 1、根据id删除
-//        Integer result = employeeMapper.deleteById(15);
-//        System.out.println("result：" + result);
-//
-//        // 2、根据 deleteByMap 条件删除
-//        Map<String, Object> columnMap  = new HashMap<>();
-//        columnMap.put("last_name","MP");
-//        columnMap.put("email","mybatis-plus@github.com");
-//        Integer ret = employeeMapper.deleteByMap(columnMap);
-//        System.out.println("ret：" + ret);
+        // 1、根据id删除
+        Integer result = employeeMapper.deleteById(15);
+        System.out.println("result：" + result);
+
+        // 2、根据 deleteByMap 条件删除
+        Map<String, Object> columnMap  = new HashMap<>();
+        columnMap.put("last_name","MP");
+        columnMap.put("email","mybatis-plus@github.com");
+        Integer ret = employeeMapper.deleteByMap(columnMap);
+        System.out.println("ret：" + ret);
 
         // 3、批量删除
         List<Integer> idList = new ArrayList<Integer>();

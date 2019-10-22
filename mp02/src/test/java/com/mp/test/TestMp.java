@@ -99,13 +99,18 @@ public class TestMp {
     public void testCommonUpdate() {
         // 初始化employee 对象
         Employee employee = new Employee();
-        employee.setId(6);
+        employee.setId(19);
         employee.setLastName("MP");
         employee.setEmail("mybatis-plus@github.com");
         employee.setGender(0);
 //        employee.setAge(33);
 
+        // 单个更新
         Integer result = employeeMapper.updateById(employee);
+        System.out.println("result：" + result);
+
+        // 批量更新， 如果 Wrapper 为空，则全部更新
+        result = employeeMapper.update(employee, null);
         System.out.println("result：" + result);
     }
 

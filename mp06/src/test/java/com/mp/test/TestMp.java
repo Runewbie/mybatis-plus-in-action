@@ -39,7 +39,7 @@ public class TestMp {
     public void testOptimisticLocker() {
 
         Employee employee = new Employee();
-        employee.setId(10);
+        employee.setId(21);
         employee.setLastName("MP");
         employee.setAge(25);
         employee.setEmail("mp@qq.com");

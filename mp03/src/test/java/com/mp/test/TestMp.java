@@ -31,7 +31,7 @@ public class TestMp {
     private EmployeeMapper employeeMapper = ioc.getBean("employeeMapper", EmployeeMapper.class);
 
     /**
-     * 条件构造器 更新操作
+     * 条件构造器 删除操作
      */
     @Test
     public void testWrapperDelete() {
@@ -67,23 +67,23 @@ public class TestMp {
     public void testWrapperSelect() {
         // 分页查询 tbl_employee 表中，年龄在 18~50 之间性别为男且
         // 姓名为 xx 的所有用户
-//        IPage<Employee> page = employeeMapper.selectPage(new Page<Employee>(1, 3),
-//                new QueryWrapper<Employee>()
-//                        .between("age", 18, 50)
-//                        .eq("gender", 1)
-//                        .eq("last_name", "MP")
-//        );
-//        System.out.println(page.getRecords());
-//
-//        // 查询 tbl_employee 表中，名字中带有M 性别为女 或者邮箱中带有a的
-//        List<Employee> employees = employeeMapper.selectList(
-//                new QueryWrapper<Employee>()
-//                        .eq("gender", 0)
-//                        .like("last_name", "M")
-//                        .or() // SQL：(gender = ? AND last_name LIKE ? OR email LIKE ?)
-//                        .like("email", "a")
-//        );
-//        System.out.println(employees);
+        IPage<Employee> page = employeeMapper.selectPage(new Page<Employee>(1, 3),
+                new QueryWrapper<Employee>()
+                        .between("age", 18, 50)
+                        .eq("gender", 1)
+                        .eq("last_name", "MP")
+        );
+        System.out.println(page.getRecords());
+
+        // 查询 tbl_employee 表中，名字中带有M 性别为女 或者邮箱中带有a的
+        List<Employee> employees = employeeMapper.selectList(
+                new QueryWrapper<Employee>()
+                        .eq("gender", 0)
+                        .like("last_name", "M")
+                        .or() // SQL：(gender = ? AND last_name LIKE ? OR email LIKE ?)
+                        .like("email", "a")
+        );
+        System.out.println(employees);
 
         // 带排序的查询
         List<Employee> list = employeeMapper.selectList(

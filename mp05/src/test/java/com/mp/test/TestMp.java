@@ -31,7 +31,7 @@ public class TestMp {
         // 1、全局配置
         com.baomidou.mybatisplus.generator.config.GlobalConfig config = new com.baomidou.mybatisplus.generator.config.GlobalConfig();
         config.setActiveRecord(true) // 是否支持AR模式
-                .setAuthor("lijian")   // 作者
+                .setAuthor("jianshu")   // 作者
                 .setOutputDir("E:\\myCode\\mybatis-plus-in-action\\mp05\\src\\main\\java")      // 生成路径
                 .setFileOverride(true) // 文件覆盖
                 .setIdType(IdType.AUTO) // 主键策略
@@ -50,8 +50,7 @@ public class TestMp {
         // 3、策略配置
         StrategyConfig stConfig = new StrategyConfig();
         stConfig.setCapitalMode(true) // 全局大写命名
-//                .setDbColumnUnderline(true) //表名 字段名 是否使用下滑线命名
-//                .setColumnNaming(NamingStrategy.underline_to_camel)
+//                .setColumnNaming(NamingStrategy.underline_to_camel)  //表名 字段名 是否使用下滑线命名
                 .setNaming(NamingStrategy.underline_to_camel) // 数据库表映射到实体的命名策略
                 .setInclude("tbl_employee") //生成的表
                 .setTablePrefix("tbl_"); // 表前缀

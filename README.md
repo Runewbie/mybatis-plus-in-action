@@ -16,3 +16,6 @@
 --- 
 ## 学习笔记：
 #### [MyBatis-Plus In Action Doc](https://github.com/Runewbie/mybatis-plus-in-action/tree/master/MyBatis-Plus%20In%20Action%20Doc)
+
+## 思维导图：
+![mp01-03](./MyBatis-Plus In Action Doc/img/MyBatis-Plus In Action.png)

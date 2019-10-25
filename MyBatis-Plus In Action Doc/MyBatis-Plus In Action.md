@@ -65,7 +65,7 @@ INSERT INTO tbl_employee(last_name,email,gender,age) VALUES('White','white@jians
 
 ![mp01-06](./img/mp01-06.png)
 
-#### 2、修改pom文件
+#### 2.2、修改pom文件
 
 核心依赖：
 
@@ -174,9 +174,9 @@ INSERT INTO tbl_employee(last_name,email,gender,age) VALUES('White','white@jians
 </build>
 ```
 
-#### 3、新建mp01模块--快速开始
+#### 2.3、新建mp01模块--快速开始
 
-3.1.1、我们在Idea里新建一个mp01模块，在Idea中选中当前项目 → `New` → `Module` ；填写artifactId，点击 `Next `；确定  `Module name `的名称，点击 `Finish` 完成
+2.3.1、我们在Idea里新建一个mp01模块，在Idea中选中当前项目 → `New` → `Module` ；填写artifactId，点击 `Next `；确定  `Module name `的名称，点击 `Finish` 完成
 
 ![mp01-07](./img/mp01-07.png)
 
@@ -184,11 +184,11 @@ INSERT INTO tbl_employee(last_name,email,gender,age) VALUES('White','white@jians
 
 ![mp01-09](./img/mp01-09.png)
 
-3.1.2、新建完成后的项目如下
+2.3.2、新建完成后的项目如下
 
 ![mp01-10](E:\myCode\学习\MP\img\mp01-10.png)
 
-3.1.3、添加实体类
+2.3.3、添加实体类
 
 在 `mp01\src\main\java\com\mp\beans\Employee.java` 路径下添加实体类 `Employee.java`:
 
@@ -204,7 +204,7 @@ public class Employee {
 }
 ```
 
-3.1.4、修改mp01的pom.xml
+2.3.4、修改mp01的pom.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -278,7 +278,7 @@ public class Employee {
 
 注意：这里在mp01的pom.xml文件中不添加上述依赖之后项目也是能正常运行的，但是我们加上相关依赖，是为让项目的依赖更加清晰一些
 
-3.1.5、在 `mp01\src\main\resources` 中添加配置文件：
+2.3.5、在 `mp01\src\main\resources` 中添加配置文件：
 
 Spring 配置文件——`applicationContext.xml`:
 
@@ -389,7 +389,7 @@ jdbc.password=123456
 
 `注意：mybatis-plus与spring整合，所有mybatis-plus的大部分都写在spring的配置文件中，这里定义一个空的mybatis-config.xml即可`
 
-3.1.6、测试
+2.3.6、测试
 
 在 `mp01\src\test\java\com\mp\test\TestMp.java` 路径下添加测试类 `TestMp.java`:
 

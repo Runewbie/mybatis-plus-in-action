@@ -1009,23 +1009,23 @@ D． 本质:
 
 在下图所示的位置处打断点，可以观测到MP加载内置方法的整个过程，我们在后边自定义全局操作添加自定义方法的时候，还会碰到`AbstractMethod`对象和`AbstractSqlInjector`对象，
 
-![x05-MapperFactoryBean](E:\myCode\学习\MP\img\x05-MapperFactoryBean.png)
+![x05-MapperFactoryBean](./img/x05-MapperFactoryBean.png)
 
-![x06-MybatisMapperRegistry](E:\myCode\学习\MP\img\x06-MybatisMapperRegistry.png)
+![x06-MybatisMapperRegistry](./img/x06-MybatisMapperRegistry.png)
 
-![x07-MybatisMapperAnnotationBuilder](E:\myCode\学习\MP\img\x07-MybatisMapperAnnotationBuilder.png)
+![x07-MybatisMapperAnnotationBuilder](./img/x07-MybatisMapperAnnotationBuilder.png)
 
-![x08-AbstractSqlInjector](E:\myCode\学习\MP\img\x08-AbstractSqlInjector.png)
+![x08-AbstractSqlInjector](./img/x08-AbstractSqlInjector.png)
 
-![x09-AbstractMethod](E:\myCode\学习\MP\img\x09-AbstractMethod.png)
+![x09-AbstractMethod](./img/x09-AbstractMethod.png)
 
-![x10-Insert](E:\myCode\学习\MP\img\x10-Insert.png)
+![x10-Insert](./img/x10-Insert.png)
 
-![x11-AbstractMethod-addMappedStatement](E:\myCode\学习\MP\img\x11-AbstractMethod-addMappedStatement.png)
+![x11-AbstractMethod-addMappedStatement](./img/x11-AbstractMethod-addMappedStatement.png)
 
-![x12-MapperBuilderAssistant-addMappedStatement](E:\myCode\学习\MP\img\x12-MapperBuilderAssistant-addMappedStatement.png)
+![x12-MapperBuilderAssistant-addMappedStatement](./img/x12-MapperBuilderAssistant-addMappedStatement.png)
 
-![x13-MybatisConfiguration-addMappedStatement](E:\myCode\学习\MP\img\x13-MybatisConfiguration-addMappedStatement.png)
+![x13-MybatisConfiguration-addMappedStatement](./img/x13-MybatisConfiguration-addMappedStatement.png)
 
 Mybatis-Plus启动注入SQL的执行流程入下入所示(中间省略若干非关键步骤)：
 
